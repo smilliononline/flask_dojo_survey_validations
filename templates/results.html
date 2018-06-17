@@ -1,0 +1,21 @@
+<html>
+    <head>
+       <title>Form Test Result</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/style.css') }}">
+    </head>
+    <body>
+    <div class="container">
+        
+        <h1>Index Page Results</h1>
+                
+          <p>Your Name: {{ name }}</p>
+          <p>Dojo Location: {{ location }} </p>
+          <p>Favorite Language: {{ language }}</P>
+          <p>Comment:  {{ comment }} </p>
+          
+    </div>
+    <form action='/clear' id='clear_button' method='get'>
+        <input type="submit" value="Clear, Hoser!"> 
+    </form>
+    </body>
+</html>
