@@ -13,11 +13,11 @@ def results():
     session['language'] = request.form['language']
     session['comment'] = request.form['comment']
 
-    if len(session['name']) or len(session['comment']) > 0 and len(session['comment']) <= 120:
+    if (len(session['name']) or len(session['comment']) > 0) and len(session['comment']) <= 120:
        
         return render_template("results.html", name=session['name'], location=session['location'], language=session['language'], comment=session['comment'])
     
-    elif len(session['name']) or len(session['comment']) < 1:
+    elif len(session['name']) < 1 or len(session['comment']) < 1:
         flash("Cannot be empty, hoser!")
     
     elif len(session['comment']) > 120:
